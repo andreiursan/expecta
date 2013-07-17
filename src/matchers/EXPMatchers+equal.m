@@ -6,9 +6,7 @@ EXPMatcherImplementationBegin(_equal, (id expected)) {
     if((actual == expected) || [actual isEqual:expected]) {
       return YES;
     } else if([actual isKindOfClass:[NSNumber class]] && [expected isKindOfClass:[NSNumber class]]) {
-      if(EXPIsNumberFloat((NSNumber *)actual) || EXPIsNumberFloat((NSNumber *)expected)) {
-        return [(NSNumber *)actual floatValue] == [(NSNumber *)expected floatValue];
-      }
+      return [actual isEqualToNumber: expected];
     }
     return NO;
   });

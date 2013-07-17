@@ -241,4 +241,16 @@ typedef struct SomeFloatPairPair {
     assertPass(test_expect(a).equal(b));
 }
 
+- (void)test_equal_NSNumber_float_value {
+    NSNumber *someValueA = @10.02;
+    NSNumber *someValueB = @10.02;
+    assertPass(test_expect(someValueA).equal(someValueB));
+}
+
+- (void)test_equal_NSNumber_int_value {
+    NSNumber *someValueA = @1002;
+    NSNumber *someValueB = @1002;
+    assertPass(test_expect(someValueA).equal(someValueB));
+}
+
 @end
